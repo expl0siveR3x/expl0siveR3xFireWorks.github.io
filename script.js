@@ -324,9 +324,11 @@ function showBdayText(name, x, y){
     }
 
     const happyBdayString = "Happy Birthday" + name;
-    ctx.fillStyle = "green";
+    ctx.fillStyle = "yellow";
     ctx.font = "48px serif";
-    ctx.fillText(happyBdayString, x - (happyBdayString.length * 1.5), y);
+    ctx.shadowBlur = 8;
+    ctx.shadowColor =  "yellow";
+    ctx.fillText(happyBdayString, x - (happyBdayString.length * 3), y);
     
 }
 
@@ -344,7 +346,7 @@ function gameloop(){
     
     showFPS();
     showSound();
-    showBdayText(bday, screen_width/2, screen_height/2)
+    showBdayText(bday, canvas.width/2,  canvas.height/2)
 }
 
 
@@ -355,6 +357,9 @@ function gameloop(){
 var gameInterval = setInterval(gameloop, 20);
    
 
-
-
+if(bday != ""){
+for(var bdayFw = 5; bdayFw > 0; bdayFw-=1){
+        fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, Random(100, canvas.width), 5 width, height));
+    }
+    }
 
