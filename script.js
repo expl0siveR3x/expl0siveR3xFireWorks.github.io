@@ -333,9 +333,9 @@ function showBdayText(name){
         return;
     }
 
-    const happyBdayString = "Happy \n Birthday \n " + name;
+    const happyBdayString = "Happy Birthday " + name;
     ctx.fillStyle = "yellow";
-   ctx.font = "48px serif";
+   ctx.font = "30px Courier New";
     ctx.shadowBlur = 8;
     ctx.shadowColor = "yellow";
 
@@ -346,11 +346,7 @@ function showBdayText(name){
     var x = (canvas.width - textWidth) / 2;
     var y = canvas.height / 2 - 50;
 
-    var lineheight = 20;
-    var lines = happyBdayString.split('\n');
-
-    for (var i = 0; i<lines.length; i++)
-    c.fillText(lines[i], x, y + (i*lineheight) );
+    
 
     
     ctx.fillText(happyBdayString, x, y);
