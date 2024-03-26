@@ -358,9 +358,9 @@ var gameInterval = setInterval(gameloop, 20);
    
 
 if(bday != ""){
-    console.log('yoooo');
+    console.log("yoooo");
 for(var bdayFw = 5; bdayFw > 0; bdayFw-=1){
-        console.log('loop fwbday');
+        console.log("loop fwbday");
         fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, Random(100, canvas.width), 5 width, height));
     }
     }
