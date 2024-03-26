@@ -361,7 +361,7 @@ if(bday != ""){
     console.log("yoooo");
     for (var bdayFw = 5; bdayFw > 0; bdayFw--) {
         console.log(bdayFw);
-        fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, Random(100, canvas.width), 5 width, height));
+        fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, Random(100, canvas.width),  width, height));
          }
     }
 
