@@ -32,8 +32,8 @@ const fireworkStickRandSpeedDivergence = fireworkStickSpeed / 4.2;
 const fireworkStickExplodeHeight = canvas.height - (canvas.height / 1.4);
 const fireworkStickExplodeHeightDivergence = fireworkStickExplodeHeight / 4;
 
-let FPS = true;
-let Sound = true;
+let FPS = false;
+let Sound = false;
 
 ///////////////////////////PURPLE////////////////////////RED///////////////////////BLUE///////////////////////GREEN///////////////////YELLOW//////////////
 const fireworkColours =  ["rgba(227, 49, 141, 0.8)", "rgba(250, 2, 39, 0.74)", "rgba(14, 21, 211, 0.86)", "rgba(25, 217, 12, 0.9)", "rgba(241, 241, 12, 0.9)"];
@@ -358,7 +358,9 @@ var gameInterval = setInterval(gameloop, 20);
    
 
 if(bday != ""){
+    console.log('yoooo');
 for(var bdayFw = 5; bdayFw > 0; bdayFw-=1){
+        console.log('loop fwbday');
         fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, Random(100, canvas.width), 5 width, height));
     }
     }
