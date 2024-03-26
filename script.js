@@ -338,7 +338,7 @@ function showBdayText(name, x, y){
     ctx.font = "48px serif";
     ctx.shadowBlur = 8;
     ctx.shadowColor =  "yellow";
-    ctx.fillText(happyBdayString, x - (happyBdayString.length * 3), y);
+    ctx.fillText(happyBdayString, x - (happyBdayString.length * 4), y + 50);
     
 }
 
