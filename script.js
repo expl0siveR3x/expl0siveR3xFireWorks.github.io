@@ -255,7 +255,16 @@ function generateStarts(starNumber) {
 generateStarts(noOfStars);
 
 
+function generateFirework(x){
 
+    const width = 10 - 2.5, height = 50 - 12.5;
+    const speed = random( (fireworkStickSpeed - fireworkStickRandSpeedDivergence), (fireworkStickSpeed + fireworkStickRandSpeedDivergence));
+    const explodeHeight = random( (fireworkStickExplodeHeight - fireworkStickExplodeHeightDivergence), (fireworkStickExplodeHeight + fireworkStickExplodeHeightDivergence))
+    
+    const numOfParticles = random(30, 50);
+    fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, x, canvas.height - (height * 1), width, height));
+
+}
 
 
 canvas.addEventListener(
@@ -271,12 +280,13 @@ canvas.addEventListener(
         }
         //anywhere else do a firework
         else{
-            const width = 10 - 2.5, height = 50 - 12.5;
-            const speed = random( (fireworkStickSpeed - fireworkStickRandSpeedDivergence), (fireworkStickSpeed + fireworkStickRandSpeedDivergence));
-            const explodeHeight = random( (fireworkStickExplodeHeight - fireworkStickExplodeHeightDivergence), (fireworkStickExplodeHeight + fireworkStickExplodeHeightDivergence))
-            
-            const numOfParticles = random(30, 50);
-            fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, click.x, canvas.height - (height * 1), width, height));
+             generateFirework(click.x);
+            //const width = 10 - 2.5, height = 50 - 12.5;
+            //const speed = random( (fireworkStickSpeed - fireworkStickRandSpeedDivergence), (fireworkStickSpeed + fireworkStickRandSpeedDivergence));
+            //const explodeHeight = random( (fireworkStickExplodeHeight - fireworkStickExplodeHeightDivergence), (fireworkStickExplodeHeight + fireworkStickExplodeHeightDivergence))
+            //
+            //const numOfParticles = random(30, 50);
+            //fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, click.x, canvas.height - (height * 1), width, height));
         }
         
     },
@@ -361,7 +371,7 @@ if(bday != ""){
     console.log("yoooo");
     for (var bdayFw = 5; bdayFw > 0; bdayFw--) {
         console.log(bdayFw);
-        fireworkSticks.push(new fireWorkStick(fireworkStickImage, speed, explodeHeight, numOfParticles, Random(100, canvas.width),  width, height));
+        generateFirework(Random(100, canvas.width));
          }
     }
 
