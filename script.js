@@ -333,7 +333,7 @@ function showBdayText(name, x, y){
         return;
     }
 
-    const happyBdayString = "Happy Birthday" + name;
+    const happyBdayString = "Happy \n Birthday \n " + name;
     ctx.fillStyle = "yellow";
     ctx.font = "48px serif";
     ctx.shadowBlur = 8;
