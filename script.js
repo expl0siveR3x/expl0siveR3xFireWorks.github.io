@@ -344,8 +344,15 @@ function showBdayText(name){
 
     // Calculate the position to center the text
     var x = (canvas.width - textWidth) / 2;
-    var y = canvas.height / 2;
+    var y = canvas.height / 2 - 50;
 
+    var lineheight = 20;
+    var lines = happyBdayString.split('\n');
+
+    for (var i = 0; i<lines.length; i++)
+    c.fillText(lines[i], x, y + (i*lineheight) );
+
+    
     ctx.fillText(happyBdayString, x, y);
 
     
