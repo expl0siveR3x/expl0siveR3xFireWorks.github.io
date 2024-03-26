@@ -371,7 +371,7 @@ if(bday != ""){
     console.log("yoooo");
     for (var bdayFw = 5; bdayFw > 0; bdayFw--) {
         console.log(bdayFw);
-        generateFirework(Math.random(100, canvas.width));
+        generateFirework(random(100, canvas.width));
          }
     }
 
