@@ -328,17 +328,26 @@ function showSound(){
 
 }
 
-function showBdayText(name, x, y){
+function showBdayText(name){
     if(name==""){
         return;
     }
 
     const happyBdayString = "Happy \n Birthday \n " + name;
     ctx.fillStyle = "yellow";
-    ctx.font = "48px serif";
+   ctx.font = "48px serif";
     ctx.shadowBlur = 8;
-    ctx.shadowColor =  "yellow";
-    ctx.fillText(happyBdayString, x - (happyBdayString.length * 4), y + 50);
+    ctx.shadowColor = "yellow";
+
+    // Calculate the width of the text
+    var textWidth = ctx.measureText(happyBdayString).width;
+
+    // Calculate the position to center the text
+    var x = (canvas.width - textWidth) / 2;
+    var y = canvas.height / 2;
+
+    ctx.fillText(happyBdayString, x, y);
+
     
 }
 
@@ -356,7 +365,7 @@ function gameloop(){
     
     showFPS();
     showSound();
-    showBdayText(bday, canvas.width/2,  canvas.height/2)
+    showBdayText(bday)
 }
 
 
