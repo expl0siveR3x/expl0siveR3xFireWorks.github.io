@@ -5,8 +5,8 @@ fireworkStickImage.src = `images/FireworkStickBgRemovedPart.png`;   //1:5 ratio
 
 //var fireworkExplodingSound = new Audio(`sound/fwWithDelaySound.mp3`);
 
-screen_width = screen.width;//-10
-screen_height = screen.height;//-100
+let screen_width = screen.width;//-10
+let screen_height = screen.height;//-100
 const ctx = canvas.getContext("2d");
 
 const scroll_minus_x = 30;
@@ -40,7 +40,8 @@ const fireworkColours =  ["rgba(227, 49, 141, 0.8)", "rgba(250, 2, 39, 0.74)", "
 const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 
-
+//////////BDAY/////////
+const bday="Alex";
 
 class gameObject {
     constructor(x, y, width, height) {
@@ -317,7 +318,17 @@ function showSound(){
 
 }
 
+function showBdayText(name, x, y){
+    if(name==""){
+        return;
+    }
 
+    const happyBdayString = "Happy Birthday" + name;
+    ctx.fillStyle = "green";
+    ctx.font = "48px serif";
+    ctx.fillText(happyBdayString, x - (happyBdayString.length * 1.5), y);
+    
+}
 
 function gameloop(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -330,9 +341,10 @@ function gameloop(){
             object.doTickActions();
         }
     }
-
+    
     showFPS();
     showSound();
+    showBdayText(bday, screen_width/2, screen_height/2)
 }
 
 
