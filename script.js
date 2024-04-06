@@ -41,7 +41,7 @@ const random = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 
 //////////BDAY/////////
-const bday="Alex";
+const bday="Dad";
 
 class gameObject {
     constructor(x, y, width, height) {
